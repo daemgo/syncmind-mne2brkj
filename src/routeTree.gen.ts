@@ -11,9 +11,17 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PreviewIndexRouteImport } from './routes/preview/index'
+import { Route as OpportunitiesIndexRouteImport } from './routes/opportunities/index'
+import { Route as FollowupsIndexRouteImport } from './routes/followups/index'
 import { Route as CustomersIndexRouteImport } from './routes/customers/index'
 import { Route as PreviewListPageRouteImport } from './routes/preview/list-page'
 import { Route as PreviewDashboardRouteImport } from './routes/preview/dashboard'
+import { Route as OpportunitiesCreateRouteImport } from './routes/opportunities/create'
+import { Route as OpportunitiesIdRouteImport } from './routes/opportunities/$id'
+import { Route as FollowupsCreateRouteImport } from './routes/followups/create'
+import { Route as FollowupsIdRouteImport } from './routes/followups/$id'
+import { Route as CustomersCreateRouteImport } from './routes/customers/create'
+import { Route as CustomersIdRouteImport } from './routes/customers/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,6 +31,16 @@ const IndexRoute = IndexRouteImport.update({
 const PreviewIndexRoute = PreviewIndexRouteImport.update({
   id: '/preview/',
   path: '/preview/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OpportunitiesIndexRoute = OpportunitiesIndexRouteImport.update({
+  id: '/opportunities/',
+  path: '/opportunities/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FollowupsIndexRoute = FollowupsIndexRouteImport.update({
+  id: '/followups/',
+  path: '/followups/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CustomersIndexRoute = CustomersIndexRouteImport.update({
@@ -40,58 +58,144 @@ const PreviewDashboardRoute = PreviewDashboardRouteImport.update({
   path: '/preview/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OpportunitiesCreateRoute = OpportunitiesCreateRouteImport.update({
+  id: '/opportunities/create',
+  path: '/opportunities/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OpportunitiesIdRoute = OpportunitiesIdRouteImport.update({
+  id: '/opportunities/$id',
+  path: '/opportunities/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FollowupsCreateRoute = FollowupsCreateRouteImport.update({
+  id: '/followups/create',
+  path: '/followups/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FollowupsIdRoute = FollowupsIdRouteImport.update({
+  id: '/followups/$id',
+  path: '/followups/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomersCreateRoute = CustomersCreateRouteImport.update({
+  id: '/customers/create',
+  path: '/customers/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomersIdRoute = CustomersIdRouteImport.update({
+  id: '/customers/$id',
+  path: '/customers/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/customers/$id': typeof CustomersIdRoute
+  '/customers/create': typeof CustomersCreateRoute
+  '/followups/$id': typeof FollowupsIdRoute
+  '/followups/create': typeof FollowupsCreateRoute
+  '/opportunities/$id': typeof OpportunitiesIdRoute
+  '/opportunities/create': typeof OpportunitiesCreateRoute
   '/preview/dashboard': typeof PreviewDashboardRoute
   '/preview/list-page': typeof PreviewListPageRoute
   '/customers/': typeof CustomersIndexRoute
+  '/followups/': typeof FollowupsIndexRoute
+  '/opportunities/': typeof OpportunitiesIndexRoute
   '/preview/': typeof PreviewIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/customers/$id': typeof CustomersIdRoute
+  '/customers/create': typeof CustomersCreateRoute
+  '/followups/$id': typeof FollowupsIdRoute
+  '/followups/create': typeof FollowupsCreateRoute
+  '/opportunities/$id': typeof OpportunitiesIdRoute
+  '/opportunities/create': typeof OpportunitiesCreateRoute
   '/preview/dashboard': typeof PreviewDashboardRoute
   '/preview/list-page': typeof PreviewListPageRoute
   '/customers': typeof CustomersIndexRoute
+  '/followups': typeof FollowupsIndexRoute
+  '/opportunities': typeof OpportunitiesIndexRoute
   '/preview': typeof PreviewIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/customers/$id': typeof CustomersIdRoute
+  '/customers/create': typeof CustomersCreateRoute
+  '/followups/$id': typeof FollowupsIdRoute
+  '/followups/create': typeof FollowupsCreateRoute
+  '/opportunities/$id': typeof OpportunitiesIdRoute
+  '/opportunities/create': typeof OpportunitiesCreateRoute
   '/preview/dashboard': typeof PreviewDashboardRoute
   '/preview/list-page': typeof PreviewListPageRoute
   '/customers/': typeof CustomersIndexRoute
+  '/followups/': typeof FollowupsIndexRoute
+  '/opportunities/': typeof OpportunitiesIndexRoute
   '/preview/': typeof PreviewIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/customers/$id'
+    | '/customers/create'
+    | '/followups/$id'
+    | '/followups/create'
+    | '/opportunities/$id'
+    | '/opportunities/create'
     | '/preview/dashboard'
     | '/preview/list-page'
     | '/customers/'
+    | '/followups/'
+    | '/opportunities/'
     | '/preview/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/customers/$id'
+    | '/customers/create'
+    | '/followups/$id'
+    | '/followups/create'
+    | '/opportunities/$id'
+    | '/opportunities/create'
     | '/preview/dashboard'
     | '/preview/list-page'
     | '/customers'
+    | '/followups'
+    | '/opportunities'
     | '/preview'
   id:
     | '__root__'
     | '/'
+    | '/customers/$id'
+    | '/customers/create'
+    | '/followups/$id'
+    | '/followups/create'
+    | '/opportunities/$id'
+    | '/opportunities/create'
     | '/preview/dashboard'
     | '/preview/list-page'
     | '/customers/'
+    | '/followups/'
+    | '/opportunities/'
     | '/preview/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CustomersIdRoute: typeof CustomersIdRoute
+  CustomersCreateRoute: typeof CustomersCreateRoute
+  FollowupsIdRoute: typeof FollowupsIdRoute
+  FollowupsCreateRoute: typeof FollowupsCreateRoute
+  OpportunitiesIdRoute: typeof OpportunitiesIdRoute
+  OpportunitiesCreateRoute: typeof OpportunitiesCreateRoute
   PreviewDashboardRoute: typeof PreviewDashboardRoute
   PreviewListPageRoute: typeof PreviewListPageRoute
   CustomersIndexRoute: typeof CustomersIndexRoute
+  FollowupsIndexRoute: typeof FollowupsIndexRoute
+  OpportunitiesIndexRoute: typeof OpportunitiesIndexRoute
   PreviewIndexRoute: typeof PreviewIndexRoute
 }
 
@@ -109,6 +213,20 @@ declare module '@tanstack/react-router' {
       path: '/preview'
       fullPath: '/preview/'
       preLoaderRoute: typeof PreviewIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/opportunities/': {
+      id: '/opportunities/'
+      path: '/opportunities'
+      fullPath: '/opportunities/'
+      preLoaderRoute: typeof OpportunitiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/followups/': {
+      id: '/followups/'
+      path: '/followups'
+      fullPath: '/followups/'
+      preLoaderRoute: typeof FollowupsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/customers/': {
@@ -132,14 +250,64 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PreviewDashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/opportunities/create': {
+      id: '/opportunities/create'
+      path: '/opportunities/create'
+      fullPath: '/opportunities/create'
+      preLoaderRoute: typeof OpportunitiesCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/opportunities/$id': {
+      id: '/opportunities/$id'
+      path: '/opportunities/$id'
+      fullPath: '/opportunities/$id'
+      preLoaderRoute: typeof OpportunitiesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/followups/create': {
+      id: '/followups/create'
+      path: '/followups/create'
+      fullPath: '/followups/create'
+      preLoaderRoute: typeof FollowupsCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/followups/$id': {
+      id: '/followups/$id'
+      path: '/followups/$id'
+      fullPath: '/followups/$id'
+      preLoaderRoute: typeof FollowupsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/customers/create': {
+      id: '/customers/create'
+      path: '/customers/create'
+      fullPath: '/customers/create'
+      preLoaderRoute: typeof CustomersCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/customers/$id': {
+      id: '/customers/$id'
+      path: '/customers/$id'
+      fullPath: '/customers/$id'
+      preLoaderRoute: typeof CustomersIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CustomersIdRoute: CustomersIdRoute,
+  CustomersCreateRoute: CustomersCreateRoute,
+  FollowupsIdRoute: FollowupsIdRoute,
+  FollowupsCreateRoute: FollowupsCreateRoute,
+  OpportunitiesIdRoute: OpportunitiesIdRoute,
+  OpportunitiesCreateRoute: OpportunitiesCreateRoute,
   PreviewDashboardRoute: PreviewDashboardRoute,
   PreviewListPageRoute: PreviewListPageRoute,
   CustomersIndexRoute: CustomersIndexRoute,
+  FollowupsIndexRoute: FollowupsIndexRoute,
+  OpportunitiesIndexRoute: OpportunitiesIndexRoute,
   PreviewIndexRoute: PreviewIndexRoute,
 }
 export const routeTree = rootRouteImport
