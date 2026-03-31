@@ -92,6 +92,43 @@ export interface DashboardStats {
 }
 
 // ============================================
+// Contract Management
+// ============================================
+
+export interface Contract {
+  id: string;
+  name: string;
+  contractNo: string;
+  customerId: string;
+  customerName: string;
+  opportunityId: string | null;
+  amount: number;
+  signDate: string;
+  startDate: string;
+  endDate: string;
+  status: ContractStatus;
+  paymentStatus: PaymentStatus;
+  owner: string;
+  remark: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export type ContractStatus = "执行中" | "已到期" | "已终止" | "待生效";
+
+export type PaymentStatus = "未付款" | "部分付款" | "已付清";
+
+export interface ContractStatusOption {
+  value: ContractStatus;
+  label: string;
+}
+
+export interface PaymentStatusOption {
+  value: PaymentStatus;
+  label: string;
+}
+
+// ============================================
 // Chart Data Types
 // ============================================
 

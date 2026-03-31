@@ -164,7 +164,7 @@ function DashboardPage() {
   return (
     <div className="container mx-auto px-6 py-6 space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight">仪表盘</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">工作台</h1>
         <p className="text-sm text-muted-foreground mt-1">
           销售数据概览
         </p>

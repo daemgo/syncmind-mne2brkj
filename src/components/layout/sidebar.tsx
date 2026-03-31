@@ -6,6 +6,7 @@ import {
   TrendingUp,
   Menu,
   X,
+  FileText,
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -14,7 +15,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   {
-    title: "仪表盘",
+    title: "工作台",
     href: "/",
     icon: LayoutDashboard,
   },
@@ -32,6 +33,11 @@ const navItems = [
     title: "商机管理",
     href: "/opportunities",
     icon: TrendingUp,
+  },
+  {
+    title: "合同管理",
+    href: "/contracts",
+    icon: FileText,
   },
 ];
 
