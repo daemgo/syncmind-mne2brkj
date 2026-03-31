@@ -13,4 +13,7 @@ export default defineConfig({
     tailwindcss(),
     tanstackStart(),
   ],
+  esbuild: {
+    jsx: "automatic",
+  },
 });
